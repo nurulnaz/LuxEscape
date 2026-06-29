@@ -164,7 +164,7 @@
       padding: 0 20px 90px 20px;
     }
     
-    /* --- GRID UTAMA --- */
+
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -189,8 +189,7 @@
       border-color: #c5a059;
       box-shadow: 0 15px 30px rgba(197,160,89,0.1);
     }
-    
-    /* Saiz kekal asal untuk gambar melintang */
+   
     .image-wrapper {
       width: 100%;
       height: 250px;
@@ -207,15 +206,14 @@
     }
     .video-wrapper {
       width: 100%;
-      height: 565px; /* Ketinggian ideal bagi menampung aspek nisbah potret 9:16 */
+      height: 565px; 
       overflow: hidden;
       background-color: #000;
     }
     .video-wrapper video {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Mengekalkan saiz original video tanpa paksaan 'landscape/stretch' */
-    }
+      object-fit: contain; 
     
     .gallery-info {
       padding: 15px 20px;
@@ -271,7 +269,7 @@
       <li class="dropdown-item">
         <span class="dropdown-trigger active">GALLERY &#9662;</span>
         <ul class="dropdown-content">
-          <li><a href="hotelgallery.html">Hotels Gallery</a></li>
+          <li><a href="hotsgallery.html">Hotels Gallery</a></li>
           <li><a href="teamgallery.html">Team Gallery</a></li>
         </ul>
       </li>
@@ -296,7 +294,7 @@
       <div class="video-wrapper">
         <video controls="controls" poster="logo.png">
           <source src="hotvid.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+         
         </video>
       </div>
       <div class="gallery-info">
