@@ -1,0 +1,213 @@
+/* Global */
+body {
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#030a14;
+  color:#fff;
+}
+html { scroll-behavior: smooth; }
+
+/* Navigation */
+#nav-container {
+  background:#061325;
+  border-bottom:2px solid #c5a059;
+}
+#nav-content {
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 20px;
+  height:70px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.nav-logo {
+  color:#c5a059;
+  margin:0;
+  font-size:1.3em;
+  letter-spacing:3px;
+  font-family:'Playfair Display','Times New Roman',serif;
+}
+#nav-links {
+  list-style:none;
+  display:flex;
+  margin:0;
+  padding:0;
+}
+#nav-links li { margin:0 12px; position:relative; }
+#nav-links a {
+  color:#c5a059;
+  text-decoration:none;
+  font-weight:600;
+  font-size:0.9em;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:25px 10px;
+  position:relative;
+  transition:all 0.3s ease;
+}
+#nav-links a::after {
+  content:"";
+  position:absolute;
+  bottom:0; left:50%;
+  width:0; height:2px;
+  background:#c5a059;
+  transition:width 0.3s ease;
+  transform:translateX(-50%);
+}
+#nav-links a:hover,
+#nav-links a.active { color:#ffffff; }
+#nav-links a:hover::after,
+#nav-links a.active::after { width:100%; }
+
+/* Dropdown menu */
+.dropdown-content {
+  display:none;
+  position:absolute;
+  top:70px;
+  left:0;
+  background-color:#061325;
+  min-width:220px;
+  border:1px solid #c5a059;
+  z-index:999;
+}
+.dropdown-content li { margin:0; }
+.dropdown-content a {
+  color:#c5a059;
+  padding:10px 15px;
+  display:block;
+  text-decoration:none;
+  transition:0.3s;
+}
+.dropdown-content a:hover {
+  background-color:rgba(197,160,89,0.1);
+  color:#fff;
+}
+.dropdown:hover .dropdown-content { display:block; }
+
+/* Hero (Home + Hotel) */
+#hero-section, .hotel-hero {
+  text-align:center;
+  padding:40px;
+  background:#061325;
+  border-bottom:2px solid #c5a059;
+}
+#hero-title-box h1, .hotel-hero h1 { margin:0; font-size:2em; }
+#hero-title-box p, .hotel-hero p { color:#c5a059; }
+
+/* Welcome Section (Home) */
+.welcome-flex {
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+.welcome-text {
+  flex:1;
+  text-align:justify;
+  line-height:1.8;
+}
+.welcome-image {
+  flex:0 0 300px;
+}
+.welcome-image img {
+  width:100%;
+  border:2px solid #c5a059;
+  border-radius:6px;
+}
+
+/* Hotel Showcase (Home) */
+#hotel-showcase {
+  display:flex;
+  gap:20px;
+  overflow:hidden;
+}
+.hotel-card {
+  flex:0 0 300px;
+  border:1px solid #c5a059;
+  padding:10px;
+  background-color:#030a14;
+  color:#fff;
+}
+.hotel-card img {
+  width:100%;
+  height:400px;
+  object-fit:cover;
+}
+.hotel-card h3 { margin:10px 0; }
+.hotel-card a {
+  color:#c5a059;
+  text-decoration:none;
+  font-weight:bold;
+}
+.hotel-card a:hover { color:#fff; }
+
+/* Section titles */
+.section-title {
+  text-align:center;
+  color:#ffffff;
+}
+.section-subtitle {
+  text-align:center;
+  color:#c5a059;
+}
+
+/* Scroll buttons */
+.scroll-buttons {
+  text-align:center;
+  margin-top:20px;
+}
+.scroll-buttons button {
+  padding:10px;
+  border:1px solid #c5a059;
+  background:none;
+  color:#c5a059;
+  cursor:pointer;
+}
+.scroll-buttons button:hover {
+  background-color:rgba(197,160,89,0.1);
+  color:#fff;
+}
+
+/* Hotel Page Universal */
+.hotel-page { padding:20px; }
+
+.hotel-container {
+  display:flex;
+  gap:20px;
+  padding:20px;
+}
+.hotel-left { flex:2; }
+.hotel-right { flex:1; }
+
+.pc { display:flex; gap:20px; }
+.pc div { flex:1; padding:10px; border:1px solid #c5a059; }
+.pros { border-top:3px solid green; }
+.cons { border-top:3px solid red; }
+
+.sidebar {
+  background:#061325;
+  padding:10px;
+  margin-bottom:20px;
+}
+.sidebar strong { color:#c5a059; display:block; }
+
+.map-box {
+  width:100%;
+  height:250px;
+  border:1px solid #c5a059;
+}
+.map-box iframe {
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* Footer */
+#footer-disclaimer, #footer {
+  background:#061325;
+  text-align:center;
+  padding:20px;
+  font-size:0.8em;
+  color:#ccc;
+  border-top:2px solid #c5a059;
+}

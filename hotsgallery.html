@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hotels Gallery | Lux Escape</title>
+  <meta name="keywords" content="hotel gallery, luxury stays, photos" />
+  <meta name="description" content="Visual gallery of our curated hotels in Kedah and Penang." />
+  <meta name="author" content="Group Members" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet" />
+
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      background-color: #030a14;
+      color: #f1f5f9;
+      font-family: 'Inter', 'Arial', sans-serif;
+      font-size: 15px;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    #nav-container {
+      background-color: rgba(6, 19, 37, 0.98);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      border-bottom: 2px solid #c5a059;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    #nav-content {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-logo-link { 
+      text-decoration: none; 
+      transition: opacity 0.3s ease; 
+      display: flex;
+      align-items: center;
+      gap: 12px; 
+      cursor: pointer; 
+    }
+    .nav-logo-link:hover { opacity: 0.85; }
+    
+    .nav-logo-img {
+      height: 48px; 
+      width: auto;
+      object-fit: contain;
+    }
+    
+    .nav-logo {
+      color: #c5a059;
+      font-size: 1.15em;
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-family: 'Times New Roman', Georgia, serif;
+      margin: 0;
+    }
+#nav-links { list-style: none; margin: 0; padding: 0; display: flex; }
+    #nav-links > li { position: relative; }
+    #nav-links > li > a, .dropdown-trigger {
+      display: block;
+      padding: 26px 12px;
+      color: #f1f5f9;
+      text-decoration: none;
+      font-size: 0.78em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    
+    #nav-links > li > a::after, .dropdown-trigger::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: #c5a059;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    #nav-links > li > a:hover::after,
+    #nav-links > li > a.active::after,
+    #nav-links > li:hover .dropdown-trigger::after { width: 100%; }
+    
+    #nav-links > li > a:hover,
+    #nav-links > li > a.active,
+    #nav-links > li:hover .dropdown-trigger { color: #c5a059; background-color: rgba(255,255,255,0.03); }
+.dropdown-content {
+      display: none;
+      position: absolute;
+      top: 75px;
+      left: 0;
+      background-color: #061325;
+      min-width: 180px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      border-top: none;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      z-index: 2000;
+    }
+    .dropdown-content li a {
+      color: #cbd5e1;
+      padding: 14px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.2s ease;
+    }
+    .dropdown-content li a:hover {
+      background-color: #c5a059;
+      color: #061325;
+      padding-left: 20px;
+    }
+    #nav-links > li:hover .dropdown-content {
+      display: block;
+    }
+
+    .gallery-header {
+      padding: 140px 0 40px 0;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 3em;
+      color: #fff;
+      font-family: 'Playfair Display', Georgia, serif;
+      margin-bottom: 10px;
+    }
+    .section-subtitle {
+      color: #c5a059;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 0.85em;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    .gallery-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px 90px 20px;
+    }
+    
+    /* --- GRID UTAMA --- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 25px;
+    }
+    
+    .gallery-item {
+      background-color: #061325;
+      border: 1px solid rgba(197,160,89,0.15);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    
+    .video-item {
+      grid-row: span 2; 
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      border-color: #c5a059;
+      box-shadow: 0 15px 30px rgba(197,160,89,0.1);
+    }
+    
+    /* Saiz kekal asal untuk gambar melintang */
+    .image-wrapper {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .gallery-item:hover .image-wrapper img {
+      transform: scale(1.06);
+    }
+    .video-wrapper {
+      width: 100%;
+      height: 565px; /* Ketinggian ideal bagi menampung aspek nisbah potret 9:16 */
+      overflow: hidden;
+      background-color: #000;
+    }
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Mengekalkan saiz original video tanpa paksaan 'landscape/stretch' */
+    }
+    
+    .gallery-info {
+      padding: 15px 20px;
+      text-align: center;
+    }
+    .gallery-info h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #fff;
+      margin: 0 0 5px 0;
+      font-size: 1.1em;
+    }
+    .gallery-info p {
+      color: #c5a059;
+      font-size: 0.8em;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    #footer-disclaimer {
+      background-color: #061325;
+      color: #94a3b8;
+      padding: 50px 20px;
+      text-align: center;
+      font-size: 0.9em;
+      line-height: 1.8;
+      border-top: 3px solid #c5a059;
+    }
+    #footer-disclaimer strong {
+      color: #ffffff;
+      display: block;
+      margin-bottom: 15px;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+    }
+    #footer-disclaimer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+<div id="nav-container">
+  <div id="nav-content">
+    <a href="index.html#hero-section" class="nav-logo-link">
+      <img src="logo.png" alt="Lux Escape Corporate Logo" class="nav-logo-img" />
+      <span class="nav-logo">HOME</span>
+    </a>
+    <ul id="nav-links">
+      <li><a href="index.html#welcome-section">WELCOME</a></li>
+      <li><a href="index.html#section-kedah">KEDAH HOTELS</a></li>
+      <li><a href="index.html#section-penang">PENANG HOTELS</a></li>
+      
+      <li class="dropdown-item">
+        <span class="dropdown-trigger active">GALLERY &#9662;</span>
+        <ul class="dropdown-content">
+          <li><a href="hotelgallery.html">Hotels Gallery</a></li>
+          <li><a href="teamgallery.html">Team Gallery</a></li>
+        </ul>
+      </li>
+
+      <li><a href="feedback.html">FEEDBACK</a></li>
+      <li><a href="group.html">THE TEAM</a></li>
+      <li><a href="index.html#contact-section">CONTACT</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="gallery-header">
+  <h1 class="section-title">Hotels Gallery</h1>
+  <p class="section-subtitle">Visuals of Curated Premium Stays</p>
+</div>
+
+<div class="gallery-container">
+  <div class="gallery-grid">
+    
+   
+    <div class="gallery-item video-item">
+      <div class="video-wrapper">
+        <video controls="controls" poster="logo.png">
+          <source src="hotvid.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="gallery-info">
+        <h4>Lux Escape Teaser</h4>
+        <p>Featured Portrait Video</p>
+      </div>
+    </div>
+    
+    <div class="gallery-item">
+      <div class="image-wrapper"><img src="amanhotel.jpg" alt="Aman Jaya Hotel" /></div>
+      <div class="gallery-info">
+        <h4>Aman Jaya Hotel</h4>
+        <p>Kedah, Malaysia</p>
+      </div>
+    </div>
+    
+    <div class="gallery-item">
+      <div class="image-wrapper"><img src="merilhotel.jpg" alt="Merilton Hotel" /></div>
+      <div class="gallery-info">
+        <h4>Merilton Hotel</h4>
+        <p>Kedah, Malaysia</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper"><img src="urhotel.jpg" alt="Urban Hotel" /></div>
+      <div class="gallery-info">
+        <h4>Urban Hotel</h4>
+        <p>Kedah, Malaysia</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper"><img src="jeraihotel.jpg" alt="Jerai Hotel" /></div>
+      <div class="gallery-info">
+        <h4>Jerai Hotel</h4>
+        <p>Kedah, Malaysia</p>
+      </div>
+    </div>
+<div class="gallery-item">
+      <div class="image-wrapper"><img src="hotelseri.jpg" alt="Hotel Seri Malaysia" /></div>
+      <div class="gallery-info">
+        <h4>Hotel Seri Malaysia</h4>
+        <p>Kedah, Malaysia</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper"><img src="lehotel.jpg" alt="Le Embassy Hotel" /></div>
+      <div class="gallery-info">
+        <h4>Le Embassy Hotel</h4>
+        <p>Penang, Malaysia</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper"><img src="wowhotel.jpg" alt="Wow Hotel" /></div>
+      <div class="gallery-info">
+        <h4>WOW Hotel</h4>
+        <p>Penang, Malaysia</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper"><img src="neohotel.jpg" alt="Hotel Neo+" /></div>
+      <div class="gallery-info">
+        <h4>Hotel Neo+</h4>
+        <p>Penang, Malaysia</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="image-wrapper"><img src="aihotel.jpg" alt="Ai Goh Hotel" /></div>
+      <div class="gallery-info">
+        <h4>Ai Goh Hotel</h4>
+        <p>Penang, Malaysia</p>
+      </div>
+    </div>
+<div class="gallery-item">
+      <div class="image-wrapper"><img src="lokehotel.jpg" alt="Loke Thye Kee Heritage Hotel" /></div>
+      <div class="gallery-info">
+        <h4>Loke Thye Kee Heritage Hotel</h4>
+        <p>Penang, Malaysia</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="footer-disclaimer">
+  <strong>OFFICIAL STUDENT PROJECT DISCLAIMER</strong>
+  <p>This website is not the official website of any real operational corporation, travel agency, or hotel brand. This website was developed strictly for the academic purpose only.</p>
+  <p>&copy; 2026 Lux Escape. All Rights Reserved.</p>
+  <p>Last Workspace Update: 30 June 2026.</p>
+</div>
+
+<audio autoplay="autoplay" loop="loop" id="bg-music">
+  <source src="bgmusic.mp3" type="audio/mpeg" />
+</audio>
+
+<script type="text/javascript">
+//<![CDATA[
+  window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('bg-music');
+    const savedTime = localStorage.getItem('audio_current_time');
+    if (savedTime) { audio.currentTime = parseFloat(savedTime); }
+    audio.play().catch(err => console.log("Autoplay blocked."));
+    audio.addEventListener('timeupdate', () => {
+      localStorage.setItem('audio_current_time', audio.currentTime);
+    });
+  });
+//]]>
+</script>
+
+</body>
+</html>

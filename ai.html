@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AiGoh Hotel | George Town</title>
+    <meta name="keywords" content="luxury hotel, Kedah hotels, Penang stays, feedback form, AiGoh Hotel" />
+    <meta name="description" content="Explore AiGoh Hotel Penang under the Lux Escape portfolio." />
+    <meta name="author" content="Group Members" />
+    
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet" />
+
+    <style type="text/css">
+       
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            background-color: #030a14;
+            color: #f1f5f9;
+            font-family: 'Inter', 'Arial', sans-serif;
+            font-size: 15px;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+
+        #nav-container {
+            background-color: rgba(6, 19, 37, 0.98);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid #c5a059;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        #nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo-link { 
+            text-decoration: none; 
+            transition: opacity 0.3s ease; 
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        
+        .nav-logo-link:hover { 
+            opacity: 0.85; 
+        }
+        
+        .nav-logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .nav-logo {
+            color: #c5a059;
+            font-size: 1.15em;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-family: 'Times New Roman', Georgia, serif;
+            margin: 0;
+        }
+        
+        #nav-links { 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; 
+            display: flex; 
+            align-items: center; 
+        }
+        
+        #nav-links > li { 
+            position: relative; 
+        }
+        
+        #nav-links > li > a {
+            display: block;
+            padding: 26px 14px;
+            color: #f1f5f9;
+            text-decoration: none;
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        #nav-links > li > a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #c5a059;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        #nav-links > li > a:hover::after { 
+            width: 100%; 
+        }
+        
+        #nav-links > li > a:hover { 
+            color: #c5a059; 
+            background-color: rgba(255,255,255,0.02); 
+        }
+        
+      
+        #nav-links li ul {
+            display: none;
+            position: absolute;
+            background-color: #061325;
+            width: 180px;
+            border: 1px solid #c5a059;
+            top: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+            z-index: 2000;
+        }
+        
+        #nav-links li ul li a {
+            display: block;
+            padding: 12px 16px;
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(197,160,89,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        #nav-links li ul li a:hover { 
+            background-color: #c5a059; 
+            color: #061325; 
+            padding-left: 20px; 
+        }
+        
+        #nav-links li:hover ul { 
+            display: block; 
+        }
+
+       
+        #nav-links li ul li ul {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 180px;
+            background-color: #061325;
+            border: 1px solid #c5a059;
+            width: 180px;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+            transform: none;
+        }
+
+        #nav-links li ul li:hover ul {
+            display: block;
+        }
+
+       
+        #hero-section {
+            height: 45vh;
+            width: 100%;
+            background: linear-gradient(rgba(6,19,37,0.5), rgba(6,19,37,0.85)), url('hotel-background.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 75px;
+            box-sizing: border-box;
+        }
+        
+        #hero-title-box h1 {
+            font-size: 4em;
+            font-family: 'Playfair Display', Georgia, serif;
+            color: #fff;
+            text-shadow: 2px 4px 15px rgba(0,0,0,0.6);
+            margin: 0 0 15px;
+        }
+        
+        #hero-title-box p {
+            font-size: 1.25em;
+            color: #c5a059;
+            font-style: italic;
+            font-family: 'Playfair Display', Georgia, serif;
+            text-shadow: 1px 2px 8px rgba(0,0,0,0.5);
+            margin: 0;
+        }
+
+        
+        .container { 
+            display: flex; 
+            flex-wrap: wrap; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            gap: 30px; 
+            box-sizing: border-box;
+        }
+        
+        .left { 
+            flex: 2; 
+            min-width: 300px; 
+        }
+        
+        .right { 
+            flex: 1; 
+            min-width: 280px; 
+        }
+
+        h2 { 
+            color: #c5a059; 
+            font-family: 'Playfair Display', Georgia, serif; 
+            margin-top: 30px; 
+        }
+        
+        p { 
+            line-height: 1.6; 
+            color: #cbd5e1; 
+        }
+
+        
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 15px; 
+        }
+        
+        th, td { 
+            border: 1px solid rgba(197, 160, 89, 0.5); 
+            padding: 14px; 
+            text-align: left; 
+        }
+        
+        th { 
+            background-color: #061325; 
+            color: #fff; 
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            color: #e2e8f0;
+            background-color: rgba(6, 19, 37, 0.3);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        
+        .pc { 
+            display: flex; 
+            gap: 20px; 
+            margin-top: 20px; 
+            flex-wrap: wrap;
+        }
+        
+        .pc div { 
+            flex: 1; 
+            min-width: 250px;
+            padding: 20px; 
+            border: 1px solid rgba(197, 160, 89, 0.2); 
+            background-color: #061325; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .pros { border-top: 3px solid #22c55e !important; }
+        .cons { border-top: 3px solid #ef4444 !important; }
+        .pros strong { color: #22c55e; font-size: 1.1em; display: block; margin-bottom: 10px; }
+        .cons strong { color: #ef4444; font-size: 1.1em; display: block; margin-bottom: 10px; }
+
+        
+        .sidebar {
+            background: #061325; 
+            padding: 25px; 
+            margin-bottom: 25px;
+            border: 1px solid rgba(197,160,89,0.25);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+        
+        .sidebar h2 { 
+            margin-top: 0; 
+            font-size: 1.25em; 
+            color: #fff; 
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar strong { 
+            color: #c5a059; 
+            display: inline-block; 
+            margin-top: 5px; 
+        }
+
+        .btn-official {
+            display: block;
+            text-align: center;
+            background-color: transparent;
+            color: #c5a059;
+            border: 1px solid #c5a059;
+            padding: 12px 15px;
+            margin-top: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-official:hover {
+            background-color: #c5a059;
+            color: #061325;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+        }
+
+        .map-box iframe {
+            width: 100%; 
+            height: 250px; 
+            border: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            display: block;
+        }
+
+                #footer-disclaimer {
+            background-color: #061325; 
+            text-align: center;
+            padding: 60px 20px; 
+            font-size: 0.85em; 
+            color: #94a3b8;
+            border-top: 3px solid #c5a059;
+            line-height: 1.8;
+        }
+        
+        #footer-disclaimer strong { 
+            color: #fff; 
+            display: block; 
+            margin-bottom: 12px; 
+            font-size: 1.1em; 
+            letter-spacing: 2px; 
+        }
+        
+        #footer-disclaimer p {
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="nav-container">
+  <div id="nav-content">
+    <a href="index.html" class="nav-logo-link">
+      <img src="logo.png" alt="Lux Escape Corporate Logo" class="nav-logo-img" />
+      <span class="nav-logo">HOME</span>
+    </a>
+    
+    <ul id="nav-links">
+      <li><a href="index.html#welcome-section">Welcome</a></li>
+      <li><a href="index.html#kedah-section">Kedah Hotels</a></li>
+      <li><a href="index.html#penang-section">Penang Hotels</a></li>
+      <li>
+        <a href="#">Gallery &#9662;</a>
+        <ul>
+          <li><a href="hotelgallery.html">Hotel Gallery</a></li>
+          <li><a href="teamgallery.html">Team Gallery</a></li>
+        </ul>
+      </li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="group.html">The Team</a></li>
+      <li><a href="index.html#contact-section">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<div id="hero-section">
+  <div id="hero-title-box">
+    <h1>AiGoh Hotel</h1>
+    <p>George Town, Penang</p>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <div class="left">
+    <h2 id="welcome-section">Hotel Overview</h2>
+    <p>AiGoh Hotel offers an exceptionally smart, cozy, and highly affordable budget boutique lodging experience right in the cultural nexus of George Town. Designed with clean minimal layouts, warm woody structural accents, and functional fittings, it caters directly to modern smart travelers, backpackers, and digital nomads seeking value without compromising cleanliness. Its excellent urban setting places travelers seconds away from world-famous local hawker streets and colonial monuments.</p>
+
+    <h2>Facilities &amp; Services</h2>
+    <ul>
+      <li>Complimentary High-Speed Wi-Fi in all rooms &amp; social zones</li>
+      <li>Air-Conditioning with individualized room climate control</li>
+      <li>Flat-Screen LED TVs with satellite programming channels</li>
+      <li>24-Hour Express Electronic Check-in &amp; Concierge Help desk</li>
+      <li>En-suite Private Bathrooms equipped with hot shower facilities</li>
+      <li>Complimentary Coffee/Tea making sets &amp; Drinking Water supplies</li>
+    </ul>
+
+    <h2>Rooms &amp; Bedding Layout</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Room Category</th>
+          <th>Bed Configuration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Standard Twin Room</td>
+          <td>2 Single Beds (Cozy Compact)</td>
+        </tr>
+        <tr>
+          <td>Superior Double Room</td>
+          <td>1 Double Bed</td>
+        </tr>
+        <tr>
+          <td>Deluxe King Room</td>
+          <td>1 Large King Bed</td>
+        </tr>
+        <tr>
+          <td>AiGoh Family Suite</td>
+          <td>2 Double Beds (Sleeps 4)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Review</h2>
+    <div class="pc">
+      <div class="pros">
+        <strong>Pros</strong>
+        <ul>
+          <li>Extremely competitive price point offering unmatched pocket value</li>
+          <li>Highly pristine, clean, and neatly maintained minimalist interior spaces</li>
+          <li>Phenomenal walkability to famous George Town culinary lanes and murals</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <strong>Cons</strong>
+        <ul>
+          <li>Compact room square footage suited primarily for luggage storage and sleeping</li>
+          <li>No full-scale commercial restaurant or pool facilities on site</li>
+          <li>City center street noise can occasionally be heard in forward-facing rooms</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="right">
+    <div class="sidebar">
+      <h2>Hotel Details</h2>
+      <strong>Location:</strong> 42, Lorong Hutton, George Town, 10050 George Town, Pulau Pinang<br />
+      <strong>Rating:</strong> 2-Star Modern Budget Boutique<br />
+      <strong>Price Range:</strong> From RM80 - RM220+ / Night
+      
+      <a href="https://aigohhotel.top/" target="_blank" class="btn-official">Official Website</a>
+    </div>
+
+    <div class="sidebar">
+      <h2>Nearby Attractions</h2>
+      <ul>
+        <li>Hutton Lane Roti Canai Spots</li>
+        <li>Chulia Street Night Hawkers</li>
+        <li>New World Park Food Centre</li>
+        <li>KOMTAR Urban Shopping Complex</li>
+        <li>Penang Road Famous Teochew Chendul</li>
+      </ul>
+    </div>
+
+    <div class="sidebar">
+      <h2>Location Map</h2>
+      <div class="map-box">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.998397765504!2d100.33106550000002!3d5.417211000000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac396fb20d651%3A0x134bc73516d655e2!2sAiGoh%20Hotel!5e0!3m2!1sen!2smy!4v1782743469139!5m2!1sen!2smy" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer-disclaimer">
+    <p><strong>OFFICIAL STUDENT PROJECT DISCLAIMER</strong></p>
+    <p>This website is not the official website of any real operational corporation, travel agency, or hotel brand. This website was developed strictly for the academic purpose only.</p>
+    <p>&copy; 2026 Lux Escape. All Rights Reserved.<br />
+    Last Workspace Update: 30 June 2026.</p>
+</div>
+
+
+<audio autoplay="autoplay" loop="loop" id="bg-music">
+  <source src="bgmusic.mp3" type="audio/mpeg" />
+</audio>
+
+<script type="text/javascript">
+//<![CDATA[
+  window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('bg-music');
+    const savedTime = localStorage.getItem('audio_current_time');
+    if (savedTime) { audio.currentTime = parseFloat(savedTime); }
+    audio.play().catch(err => console.log("Autoplay blocked."));
+    audio.addEventListener('timeupdate', () => {
+      localStorage.setItem('audio_current_time', audio.currentTime);
+    });
+  });
+//]]>
+</script>
+
+</body>
+</html>

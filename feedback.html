@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Feedback | Kedah &amp; Penang Hotels</title>
+  <meta name="keywords" content="luxury hotel, Kedah hotels, Penang stays, feedback form" />
+  <meta name="description" content="Share your feedback about our hotel showcase." />
+  <meta name="author" content="Group Members" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet" />
+
+  <style>
+    #nav-links li ul li ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 180px;   /* keluar ke kanan */
+      background-color: #061325;
+      border: 1px solid #c5a059;
+      width: 180px;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    }
+
+    #nav-links li ul li:hover ul {
+      display: block;
+    }
+
+   
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      background-color: #030a14;
+      color: #f1f5f9;
+      font-family: 'Inter', 'Arial', sans-serif;
+      font-size: 15px;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    
+    #nav-container {
+      background-color: rgba(6, 19, 37, 0.98);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      border-bottom: 2px solid #c5a059;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    #nav-content {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+   
+    .nav-logo-link { 
+      text-decoration: none; 
+      transition: opacity 0.3s ease; 
+      display: flex;
+      align-items: center;
+      gap: 12px; 
+      cursor: pointer;
+    }
+    .nav-logo-link:hover { opacity: 0.85; }
+    
+   
+    .nav-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+    
+    .nav-logo {
+      color: #c5a059;
+      font-size: 1.15em;
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-family: 'Times New Roman', Georgia, serif;
+      margin: 0;
+    }
+    #nav-links { list-style: none; margin: 0; padding: 0; display: flex; }
+    #nav-links > li { position: relative; }
+    #nav-links > li > a {
+      display: block;
+      padding: 26px 12px;
+      color: #f1f5f9;
+      text-decoration: none;
+      font-size: 0.78em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    #nav-links > li > a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: #c5a059;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    #nav-links > li > a:hover::after,
+    #nav-links > li > a.active::after { width: 100%; }
+    #nav-links > li > a:hover,
+    #nav-links > li > a.active { color: #c5a059; background-color: rgba(255,255,255,0.03); }
+    #nav-links li ul {
+      display: none;
+      position: absolute;
+      background-color: #061325;
+      width: 180px;
+      border: 1px solid #c5a059;
+      top: 75px;
+      left: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    }
+    #nav-links li ul li a {
+      display: block;
+      padding: 12px 20px;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.85em;
+      border-bottom: 1px solid rgba(197,160,89,0.1);
+      transition: all 0.3s ease;
+    }
+    #nav-links li ul li a:hover { background-color: #c5a059; color: #061325; padding-left: 25px; }
+    #nav-links li:hover ul { display: block; }
+
+    #hero-section {
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(rgba(6,19,37,0.6), rgba(6,19,37,0.9)),
+                  url('feedback-bg.jpg') no-repeat center center;
+      background-size: cover;
+      border-bottom: 2px solid #c5a059;
+      padding-top: 75px; 
+    }
+    #hero-section h1 {
+      font-size: 3em;
+      color: #fff;
+      margin: 0 0 15px;
+      text-shadow: 2px 4px 15px rgba(0,0,0,0.6);
+    }
+    #hero-section p {
+      font-size: 1.2em;
+      color: #c5a059;
+      font-style: italic;
+      margin: 0;
+      text-shadow: 1px 2px 8px rgba(0,0,0,0.5);
+    }
+
+  
+    .feedback-container {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 40px;
+      background-color: #061325;
+      border: 1px solid #c5a059;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+    h2 {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-family: 'Playfair Display', Georgia, serif;
+      color: #fff;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+      color: #c5a059;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(197, 160, 89, 0.5);
+      background-color: #030a14;
+      color: #ffffff;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+      outline: none;
+      border-color: #c5a059;
+    }
+    
+    .rating {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    .rating label {
+      margin: 0;
+      font-weight: normal;
+      color: #ffffff;
+      text-transform: none;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 25px;
+    }
+    .buttons input {
+      padding: 12px 28px;
+      margin: 5px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+    .btn-submit {
+      background-color: #c5a059;
+      color: #030a14;
+    }
+    .btn-submit:hover {
+      background-color: #e2be7a;
+    }
+    .btn-reset {
+      background-color: #030a14;
+      color: #ffffff;
+      border: 1px solid #c5a059 !important;
+    }
+    .btn-reset:hover {
+      background-color: #c5a059;
+      color: #030a14;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 25px;
+      color: #c5a059;
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: color 0.3s ease;
+    }
+    .back-link:hover {
+      color: #fff;
+    }
+   
+    #footer-disclaimer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #061325;
+      border-top: 2px solid #c5a059;
+      font-size: 0.85em;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+    #footer-disclaimer strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+
+ <div id="nav-container">
+    <div id="nav-content">
+        <a href="index.html" class="nav-logo-link">
+            <img src="logo.png" alt="Lux Escape Corporate Logo" class="nav-logo-img" />
+            <h2 class="nav-logo">HOME</h2>
+        </a>
+        <ul id="nav-links">
+          <li><a href="index.html#welcome-section">Welcome</a></li>
+          <li><a href="index.html#kedah-section">Kedah Hotels</a></li>
+          <li><a href="index.html#penang-section">Penang Hotels</a></li>
+          <li>
+            <a href="#">Gallery &#9662;</a>
+            <ul>
+              <li><a href="hotelgallery.html">Hotel Gallery</a></li>
+              <li><a href="teamgallery.html">Team Gallery</a></li>
+            </ul>
+          </li>
+          <li><a href="feedback.html" class="active" style="color: #c5a059; background-color: rgba(255,255,255,0.03); border-bottom: 2px solid #c5a059; padding-bottom: 24px;">Feedback</a></li>
+          <li><a href="group.html">The Team</a></li>
+          <li><a href="index.html#contact-section">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+  
+  <div id="hero-section">
+    <h1>Website Feedback Form</h1>
+    <p>Your opinion matters to us</p>
+  </div>
+
+  
+  <div class="feedback-container">
+    <h2>Share Your Feedback</h2>
+    <form id="feedbackForm" action="https://formspree.io/f/mnjkawyw" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="fullname" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="feedback">Your Feedback</label>
+      <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+      <label>Rate Our Site</label>
+      <div class="rating">
+        <input type="radio" id="rate1" name="rating" value="1" /> <label for="rate1">1</label>
+        <input type="radio" id="rate2" name="rating" value="2" /> <label for="rate2">2</label>
+        <input type="radio" id="rate3" name="rating" value="3" /> <label for="rate3">3</label>
+        <input type="radio" id="rate4" name="rating" value="4" /> <label for="rate4">4</label>
+        <input type="radio" id="rate5" name="rating" value="5" /> <label for="rate5">5</label>
+      </div>
+
+      <label for="suggestion">Suggestions</label>
+      <textarea id="suggestion" name="suggestion" rows="3"></textarea>
+
+      <div class="buttons">
+        <input type="submit" value="Submit Feedback" class="btn-submit" />
+        <input type="reset" value="Reset Form" class="btn-reset" />
+      </div>
+    </form>
+  </div>
+
+
+<div id="footer-disclaimer">
+    <p><strong>OFFICIAL STUDENT PROJECT DISCLAIMER</strong></p>
+    <p>This website is not the official website of any real operational corporation, travel agency, or hotel brand. This website was developed strictly for the academic purpose only.</p>
+    <p>&copy; 2026 Lux Escape. All Rights Reserved.<br />
+    Last Workspace Update: 30 June 2026.</p>
+</div>
+
+
+  <script>
+    document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+      alert("Thank you for your feedback! Your submission is being processed.");
+    });
+  </script>
+
+
+<audio autoplay loop id="bg-music">
+  <source src="bgmusic.mp3" type="audio/mpeg" />
+</audio>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('bg-music');
+    const savedTime = localStorage.getItem('audio_current_time');
+    if (savedTime) { audio.currentTime = parseFloat(savedTime); }
+    audio.play().catch(err => console.log("Autoplay blocked."));
+    audio.addEventListener('timeupdate', () => {
+      localStorage.setItem('audio_current_time', audio.currentTime);
+    });
+  });
+</script>
+
+</body>
+</html>
